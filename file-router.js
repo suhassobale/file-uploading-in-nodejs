@@ -7,10 +7,10 @@ var storage =   multer.diskStorage({
       cb(null,  './public/upload');
     },
     filename: function (req, file, cb) {
-      cb(null, file.originalname);
+      cb(null, file.originalname);  
     }
   });
-var upload = multer({storage:storage}).single('filetitle');
+var upload = multer({storage:storage}).single('filetitle'); 
 router.get('/',function(req,res,next){
     res.render('file-upload',{"form":"file upload form"});
 });
