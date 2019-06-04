@@ -10,13 +10,13 @@ var storage =   multer.diskStorage({
       cb(null, file.originalname);  
     }
   });
-var upload = multer({storage:storage}).single('filetitle');     
+var upload = multer({storage:storage}).single('filetitle');      
 router.get('/',function(req,res,next){
     res.render('file-upload',{"form":"file upload form"});
 });
 
 router.post('/', function(req,res,next){
-    upload(req, res, function(err) {
+    upload(req, res, function(err) { 
         if(err) {
             console.log('Error Occured');
             return;
